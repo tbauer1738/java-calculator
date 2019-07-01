@@ -2,7 +2,6 @@ package com.javacalculator.myapp;
 
 import java.math.BigDecimal;
 import java.util.Scanner;
-import com.javacalculator.model.Calculator;
 
 public class MyApp {
 
@@ -15,8 +14,7 @@ public class MyApp {
         String operand = MyScanner.next();
         System.out.println("What is your second number?");
         BigDecimal y = MyScanner.nextBigDecimal();
-
-            MyApp.Calculate(x, operand, y);
+        MyApp.Calculate(x, operand, y);
         }
     }
 
@@ -39,6 +37,8 @@ public class MyApp {
                 BigDecimal divide = x.divide(y);
                 System.out.println("x / y = " + divide);
                 return;
+            default:
+                System.out.println("Looks like you didn't enter a valid operand, let's try that again.");
         }
     }
 }
