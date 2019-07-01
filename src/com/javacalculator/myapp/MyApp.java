@@ -37,6 +37,10 @@ public class MyApp {
                 BigDecimal divide = x.divide(y);
                 System.out.println("x / y = " + divide);
                 return;
+            case "^":
+                BigDecimal pow = x.pow(y.intValue());
+                System.out.println("x^y =" + pow);
+                return;
             default:
                 System.out.println("Looks like you didn't enter a valid operand, let's try that again.");
         }
