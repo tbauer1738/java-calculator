@@ -1,6 +1,7 @@
 package com.javacalculator.myapp;
 
 import java.math.BigDecimal;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MyApp {
@@ -34,8 +35,12 @@ public class MyApp {
                 System.out.println("x * y = " + multiply);
                 return;
             case "/":
-                BigDecimal divide = x.divide(y);
-                System.out.println("x / y = " + divide);
+                try{
+                    BigDecimal divide = x.divide(y);
+                    System.out.println("x / y = " + divide);
+                }catch( ArithmeticException ae) {
+                    System.out.println("Dividing by " + y + " is not possible, please try again.");
+                }
                 return;
             case "^":
                 BigDecimal pow = x.pow(y.intValue());
